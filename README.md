@@ -137,17 +137,16 @@ interface/ConfigFactory.py 中定义了几种标准的配置方案。
 
 #### **2.4.3 witin_nn** **量化训练示例**
 
+![image](https://github.com/user-attachments/assets/45448065-04a1-4121-b818-eac6441fffea)
 
 
 #### **2.4.3 witin_nn** **量化及加噪训练示例**
-![image-20240815111407189](https://github.com/user-attachments/assets/3a7e470f-af74-4cce-bd7c-e318620c15f8)
-
 
 ![image-20240815111445712](https://github.com/user-attachments/assets/94ae1e79-ac3c-4421-be60-f8bd4d7ea01d)
 
 
 
-**
+
 
 #### **2.5** **量化位宽大于** **8bit** **指导**
 
@@ -179,7 +178,7 @@ interface/ConfigFactory.py 中定义了几种标准的配置方案。
 ```
 Python
 
-\#量化位宽 int8
+#量化位宽 int8
 
 x_quant_bits = 8
 
@@ -249,6 +248,8 @@ scale_x: 128
 • use_quantization = True，指定 scale_x、scale_y、scale_weight，指定 bias_row_N (=8) 时，损失函数值记为 Lf2、模型评价指标记为 Pf2。
 
 • use_quantization = True、use_noise = True，指定 scale_x、scale_y、scale_weight，指定 bias_row_N (=8)时，损失函数值记为 Lf3、模型评价指标记为 Pf3。一般来说，Lf1<Lf2<Lf3、Pf1 好于 Pf2 好于 Pf3，具体差别多少反映了量化、加噪带来的影响。
+
+
 
 **step2: use_quantization =True、指定 scale_x、scale_y、scale_weight、指定bias_row_N (=8) ，加载 step1 浮点模型，进行 QAT 重训练（量化损失不大时可略过）。**
 
